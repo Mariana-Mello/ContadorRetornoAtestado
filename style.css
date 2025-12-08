@@ -1,0 +1,199 @@
+/* 
+  RESET BÁSICO
+  Remove espaçamentos padrão do navegador,
+  garantindo que o layout fique mais consistente.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+  ESTILO DO BODY
+  Mantemos o fundo suave e centralizamos tudo
+  vertical e horizontalmente usando flexbox.
+*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4; /* tom suave, moderno e clean */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* ocupa tela inteira */
+    padding: 20px; /* evita que fique colado em telas muito pequenas */
+}
+
+/*
+  CONTAINER PRINCIPAL (#app)
+  Centralizado naturalmente pela flexbox do body.
+  Apenas limitamos a largura máxima.
+*/
+#app {
+    width: 100%;
+    max-width: 420px; /* garante layout bonito no desktop */
+    text-align: center; /* centraliza textos */
+}
+
+/* 
+  TÍTULO PRINCIPAL 
+*/
+h1 {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: 600;
+}
+
+/* 
+  CARD PRINCIPAL (calc-card)
+  Esta é a caixa arredondada, clean e "oval".
+  Aqui entra a estética principal da ferramenta.
+*/
+#calc-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 40px;  /* bem arredondado (oval) */
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.08),
+        0 2px 4px rgba(0, 0, 0, 0.04); /* sombra suave e moderna */
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* espaçamento entre os elementos */
+}
+
+/*
+  LABELS DOS CAMPOS
+*/
+label {
+    text-align: left;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #444;
+}
+
+/* 
+  CAMPOS INPUT
+  - bordas arredondadas (leve)
+  - fundo claro
+  - espaçamento confortável
+*/
+input {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.2s;
+}
+
+/* 
+  EFEITO DE FOCO NOS CAMPOS
+  Deixa mais moderno e acessível
+*/
+input:focus {
+    border-color: #4a90e2; /* azul suave */
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.25);
+}
+
+/* ------------------------
+   ESTILO BASE PARA BOTÕES
+   ------------------------
+   Mantemos aqui o estilo original que você tinha:
+   - botão azul, arredondado, chamativo.
+   - isto funciona como "base" para qualquer botão.
+*/
+button {
+    background: #4a90e2;       /* cor azul padrão */
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+/* 
+  EFEITO HOVER PADRÃO (herdado pelo botão primário)
+*/
+button:hover {
+    background: #3b7fce;
+}
+
+/* ------------------------
+   CLASSES ESPECÍFICAS
+   ------------------------
+   Aqui criamos variações sem perder a base.
+   Use 'btn-primario' no botão principal (mantém aparência azul).
+   Use 'btn-secundario' no botão reiniciar (cinza, mais discreto).
+*/
+
+/* Botão primário — pode reaplicar a classe se quiser,
+   mas visualmente será igual ao botão base. */
+.btn-primario {
+    /* não é necessário repetir tudo — a regra 'button' já aplica */
+    width: 100%;            /* exemplo: faz o botão ocupar toda a largura do card */
+    border-radius: 25px;    /* garantia adicional */
+}
+
+/* Hover específico para primário (reinforça o comportamento) */
+.btn-primario:hover {
+    background: #3b7fce;
+}
+
+/* Botão secundário (reiniciar) — tom cinza, discreto */
+.btn-secundario {
+    background: #bdbdbd;    /* cinza claro */
+    color: #333;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Hover sutil pro secundário */
+.btn-secundario:hover {
+    background: #a5a5a5;
+}
+
+/* ------------------------
+   OCULTAR BOTÃO REINICIAR POR PADRÃO
+   ------------------------
+   O botão com id #btnReiniciar ficará escondido até o cálculo ser executado.
+   O JavaScript deve alterar display para 'block' ou 'flex' quando apropriado.
+*/
+#btnReiniciar {
+    display: none;
+}
+
+/* ------------------------
+   ÁREA DE RESULTADO
+   (mantemos sua regra original também)
+   ------------------------ */
+#resultado {
+    margin-top: 10px;
+    font-size: 1.05rem;
+    color: #222;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* 
+  RESPONSIVIDADE EXTRA (caso telas muito pequenas)
+*/
+@media (max-width: 350px) {
+    #calc-card {
+        padding: 18px;
+        border-radius: 25px; /* reduz o oval para se adaptar */
+    }
+    h1 {
+        font-size: 1.3rem;
+    }
+}
