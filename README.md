@@ -1,3 +1,6 @@
+<img width="626" height="619" alt="image" src="https://github.com/user-attachments/assets/786c6ef4-c95a-4e6c-ba14-a36e96153e00" />
+
+---
 # 📄 Calculadora de Retorno – Atestados  
 
 Ferramenta simples, rápida e responsiva para calcular automaticamente a **data de retorno de colaboradores** após afastamento por atestado médico.
