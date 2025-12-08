@@ -39,12 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
     retorno.setDate(ultimoDia.getDate() + 1);
 
     resultado.innerHTML = `
-      🔙 <strong>Data de retorno:</strong>
-      <span style="color: green; font-weight: 700;">
-        ${formatoBR(retorno)}
-      </span>
-    `;
+  📅 <strong>Último dia do atestado:</strong><br>
+  <span style="color:#0077cc; font-weight:700;">
+    ${formatoBR(ultimoDia)}
+  </span>
+  <br><br>
 
+  🔙 <strong>Data de retorno:</strong><br>
+  <span style="color: green; font-weight: 700;">
+    ${formatoBR(retorno)}
+  </span>
+`;
     btnReiniciar.style.display = "block";
   }
 
@@ -59,3 +64,4 @@ document.addEventListener("DOMContentLoaded", () => {
   btnCalcular.addEventListener("click", calcularRetorno);
   btnReiniciar.addEventListener("click", reiniciarCalculo);
 });
+
