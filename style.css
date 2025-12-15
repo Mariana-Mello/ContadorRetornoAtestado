@@ -1,43 +1,25 @@
-/* 
-  RESET BÁSICO
-  Remove espaçamentos padrão do navegador,
-  garantindo que o layout fique mais consistente.
-*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 
-  ESTILO DO BODY
-  Mantemos o fundo suave e centralizamos tudo
-  vertical e horizontalmente usando flexbox.
-*/
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f4f4f4; /* tom suave, moderno e clean */
+    background: #f4f4f4; 
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* ocupa tela inteira */
-    padding: 20px; /* evita que fique colado em telas muito pequenas */
+    min-height: 100vh; 
+    padding: 20px; 
 }
 
-/*
-  CONTAINER PRINCIPAL (#app)
-  Centralizado naturalmente pela flexbox do body.
-  Apenas limitamos a largura máxima.
-*/
 #app {
     width: 100%;
-    max-width: 420px; /* garante layout bonito no desktop */
-    text-align: center; /* centraliza textos */
+    max-width: 420px;
+    text-align: center; 
 }
 
-/* 
-  TÍTULO PRINCIPAL 
-*/
 h1 {
     margin-bottom: 20px;
     font-size: 1.6rem;
@@ -45,26 +27,18 @@ h1 {
     font-weight: 600;
 }
 
-/* 
-  CARD PRINCIPAL (calc-card)
-  Esta é a caixa arredondada, clean e "oval".
-  Aqui entra a estética principal da ferramenta.
-*/
 #calc-card {
     background: #ffffff;
     padding: 25px;
-    border-radius: 40px;  /* bem arredondado (oval) */
+    border-radius: 40px; 
     box-shadow: 
         0 4px 12px rgba(0, 0, 0, 0.08),
-        0 2px 4px rgba(0, 0, 0, 0.04); /* sombra suave e moderna */
+        0 2px 4px rgba(0, 0, 0, 0.04);
     display: flex;
     flex-direction: column;
-    gap: 16px; /* espaçamento entre os elementos */
+    gap: 16px; 
 }
 
-/*
-  LABELS DOS CAMPOS
-*/
 label {
     text-align: left;
     font-size: 0.95rem;
@@ -72,12 +46,6 @@ label {
     color: #444;
 }
 
-/* 
-  CAMPOS INPUT
-  - bordas arredondadas (leve)
-  - fundo claro
-  - espaçamento confortável
-*/
 input {
     padding: 12px;
     border-radius: 12px;
@@ -87,24 +55,13 @@ input {
     transition: 0.2s;
 }
 
-/* 
-  EFEITO DE FOCO NOS CAMPOS
-  Deixa mais moderno e acessível
-*/
 input:focus {
-    border-color: #4a90e2; /* azul suave */
+    border-color: #4a90e2;
     box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.25);
 }
 
-/* ------------------------
-   ESTILO BASE PARA BOTÕES
-   ------------------------
-   Mantemos aqui o estilo original que você tinha:
-   - botão azul, arredondado, chamativo.
-   - isto funciona como "base" para qualquer botão.
-*/
 button {
-    background: #4a90e2;       /* cor azul padrão */
+    background: #4a90e2;     
     color: white;
     padding: 14px;
     border: none;
@@ -115,37 +72,21 @@ button {
     transition: 0.2s;
 }
 
-/* 
-  EFEITO HOVER PADRÃO (herdado pelo botão primário)
-*/
 button:hover {
     background: #3b7fce;
 }
 
-/* ------------------------
-   CLASSES ESPECÍFICAS
-   ------------------------
-   Aqui criamos variações sem perder a base.
-   Use 'btn-primario' no botão principal (mantém aparência azul).
-   Use 'btn-secundario' no botão reiniciar (cinza, mais discreto).
-*/
-
-/* Botão primário — pode reaplicar a classe se quiser,
-   mas visualmente será igual ao botão base. */
 .btn-primario {
-    /* não é necessário repetir tudo — a regra 'button' já aplica */
-    width: 100%;            /* exemplo: faz o botão ocupar toda a largura do card */
-    border-radius: 25px;    /* garantia adicional */
+    width: 100%;         
+    border-radius: 25px;   
 }
 
-/* Hover específico para primário (reinforça o comportamento) */
 .btn-primario:hover {
     background: #3b7fce;
 }
 
-/* Botão secundário (reiniciar) — tom cinza, discreto */
 .btn-secundario {
-    background: #bdbdbd;    /* cinza claro */
+    background: #bdbdbd; 
     color: #333;
     padding: 12px;
     border: none;
@@ -158,25 +99,14 @@ button:hover {
     margin-top: 10px;
 }
 
-/* Hover sutil pro secundário */
 .btn-secundario:hover {
     background: #a5a5a5;
 }
 
-/* ------------------------
-   OCULTAR BOTÃO REINICIAR POR PADRÃO
-   ------------------------
-   O botão com id #btnReiniciar ficará escondido até o cálculo ser executado.
-   O JavaScript deve alterar display para 'block' ou 'flex' quando apropriado.
-*/
 #btnReiniciar {
     display: none;
 }
 
-/* ------------------------
-   ÁREA DE RESULTADO
-   (mantemos sua regra original também)
-   ------------------------ */
 #resultado {
     margin-top: 10px;
     font-size: 1.05rem;
@@ -185,15 +115,13 @@ button:hover {
     font-weight: 500;
 }
 
-/* 
-  RESPONSIVIDADE EXTRA (caso telas muito pequenas)
-*/
 @media (max-width: 350px) {
     #calc-card {
         padding: 18px;
-        border-radius: 25px; /* reduz o oval para se adaptar */
+        border-radius: 25px; 
     }
     h1 {
         font-size: 1.3rem;
     }
 }
+
