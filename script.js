@@ -5,10 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnReiniciar = document.getElementById("btnReiniciar");
   const resultado = document.getElementById("resultado");
 
-  // Cria uma data SEM interferência de fuso/UTC
   function criarDataBrasil(valorInput) {
     const [ano, mes, dia] = valorInput.split("-").map(Number);
-    return new Date(ano, mes - 1, dia); // mês começa em 0 no JS
+    return new Date(ano, mes - 1, dia); 
   }
 
   const formatoBR = (data) =>
@@ -30,11 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const dataInicio = criarDataBrasil(dataInicioValor);
 
-    // último dia = início + (dias - 1)
     const ultimoDia = new Date(dataInicio);
     ultimoDia.setDate(dataInicio.getDate() + (diasValor - 1));
 
-    // retorno = último dia + 1
     const retorno = new Date(ultimoDia);
     retorno.setDate(ultimoDia.getDate() + 1);
 
@@ -64,5 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
   btnCalcular.addEventListener("click", calcularRetorno);
   btnReiniciar.addEventListener("click", reiniciarCalculo);
 });
+
 
 
