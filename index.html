@@ -1,106 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8" />
-
-    <!-- 
-      O <meta name="viewport"> garante que a ferramenta 
-      fique responsiva em celulares, tablets e desktops.
-    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Calculadora de Retorno – Atestados</title>
-
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="logo.png">
-
 </head>
-
 <body>
-
-    <!-- 
-      SECTION PRINCIPAL
-      --------------------
-      Usaremos esta div como container geral.
-      Ela será centralizada pela estilização futura.
-    -->
     <div id="app">
-
-        <!-- 
-          TÍTULO PRINCIPAL
-          -----------------
-          Simples e direto, será centralizado e estilizado
-          depois para manter o visual clean.
-        -->
         <img src="logo.png" width="120" style="object-fit: contain;" alt="Logo"> 
         <h1>Calculadora de Retorno</h1>
-
-
-        <!-- 
-          CARD / BLOCO ARREDONDADO
-          --------------------------
-          Este será o componente visual central.
-          É aqui onde:
-            - Usuário escolhe a data
-            - Usuário informa quantidade de dias
-            - Clique para calcular
-            - Resultado aparece
-          
-          No CSS deixaremos essa área com aspecto oval.
-        -->
         <div id="calc-card">
-
-            <!-- Campo da data inicial -->
             <label for="dataInicial">Data do atestado:</label>
-            <!-- 
-              type="date" já dá o calendário nativo.
-              Isso facilita muito a entrada de dados.
-            -->
             <input 
                 type="date" 
                 id="dataInicial"
                 placeholder="Selecione a data"
             />
-
-            <!-- Campo da quantidade de dias -->
             <label for="dias">Quantidade de dias:</label>
-            <!-- 
-              type="number" garante que o usuário insira números.
-              O mínimo será 1 porque um atestado precisa ter pelo menos 1 dia.
-            -->
             <input 
                 type="number" 
                 id="dias" 
                 min="1" 
                 placeholder="Ex: 1, 2, 3..."
             />
-
-            <!-- Botão que vai disparar o cálculo -->
            <button id="btnCalcular" class="btn-primario">Calcular retorno</button>
-
-            <!-- 
-              ÁREA DO RESULTADO
-              ------------------
-              Aqui exibiremos:
-                - Último dia do afastamento
-                - Dia de retorno
-
-              Inicialmente ela ficará vazia.
-            -->
             <div id="resultado"></div>
-
             <button id="btnReiniciar" class="btn-secundario">Reiniciar</button>
-
         </div>
-
     </div>
-
     <script src="script.js"></script>
-
 </body>
-
 </html>
+
 
 
 
